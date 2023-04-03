@@ -21,16 +21,20 @@
           <section class="col s3">
             <h2 class="red">Search for a City:</h2>
             
-            <input placeholder="City here" type="text" class="validate" />
+            <input placeholder="City here" type="text" class="validate" id="city" />
             <button class="btn waves-effect waves-light" type="submit" name="action" id="srch">Search
               <i class="material-icons ">search</i>
             </button>
           
           </section>
-          <section class="col s9">
-            <h2 class="blue">Placeholderbox</h2>
-            <figure class="col s2 card blue-grey">
-              <p id="weather-box">Example text for card</p>
+          
+          <section>
+          
+            <figure class="col s6 card light-blue accent-3">
+              <h3 id="weather-box">State</h3>
+              <h5>Temperature:<div id="temp"></div></h5>
+              <h5>Wind:<div id="wind"></div></h5>
+              <h5>Humidity:<div id="humid"></div></h5>
 
             </figure>
 
