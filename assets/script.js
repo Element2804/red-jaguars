@@ -11,7 +11,7 @@ var wthrMain = document.querySelector("#main-weather");
 
 
 function currentWeather(){
-    var inputURL = "http://api.openweathermap.org/geo/1.0/direct?q="+ srchCity.value +"&limit=1&appid="+ apiKey;
+    var inputURL = "https://api.openweathermap.org/geo/1.0/direct?q="+ srchCity.value +"&limit=1&appid="+ apiKey;
     fetch(inputURL)
     .then(function(response){
         return response.json();      

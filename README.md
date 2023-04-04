@@ -10,7 +10,7 @@ N/A
 
 ## Usage
 
-Follow the link to get started : https://element2804.github.io/purple-kittens/
+Follow the link to get started : https://element2804.github.io/red-jaguars/
 
 ![87b171b8-a797-4e65-97f4-e8186ca84e46](https://user-images.githubusercontent.com/103654389/229673843-b6b8df99-3287-4050-b2ce-1b1810c7384d.png)
 
