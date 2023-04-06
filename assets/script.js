@@ -6,6 +6,8 @@ var temp = document.querySelector("#temp");
 var wind = document.querySelector("#wind");
 var humid = document.querySelector("#humid");
 var wthrMain = document.querySelector("#main-weather");
+var castCard = document.querySelector("#weather-card");
+var forOne = document.querySelector("#forOne")
 
 
 
@@ -34,7 +36,7 @@ function currentWeather(){
             humid.textContent = data.main.humidity+ " %";
           // console.log(data);
            
-             var fiveUrl = "https://api.openweathermap.org/data/2.5/forecast?lat="+ lat +"&lon="+ lon +"&appid="+ apiKey;
+             var fiveUrl = "https://api.openweathermap.org/data/2.5/forecast?lat="+ lat +"&lon="+ lon +"&units=imperial&appid="+ apiKey;
 
            fetch(fiveUrl)
            .then (function (response){
@@ -50,16 +52,33 @@ function currentWeather(){
             console.log(fiveDay)
 
             for (var i = 0; i < fiveDay.length; i++){
-              var time = document.createElement("h3");
+              
+              var time = document.createElement("div");
+              var fiveTemp = document.createElement("div");
+              var fiveHumid = document.createElement("div");
+              var fiveDesc = document.createElement("div");
+
+            
+
+              fiveTemp.textContent = fiveDay[i].main.temp;
+              console.log(fiveDay[i].main.temp);
+                            
               time.textContent = fiveDay[i].dt_txt;
+              fiveTemp.textContent = "Temp- " + fiveDay[i].main.temp + "°F";
+              fiveHumid.textContent = "Humidity- " + fiveDay[i].main.humidity +"%";
+              fiveDesc.textContent = "Chance Of: " + fiveDay[i].weather[0].description;                       
+
               wthrMain.appendChild(time);
+              wthrMain.appendChild(fiveHumid);             
+              wthrMain.appendChild(fiveTemp);
+              wthrMain.appendChild(fiveDesc);
+
+              
+
             }
 
             
-            var castCard = document.createElement("div");
-            castCard.classList.add("card","teal")
-            wthrMain.appendChild(castCard);
-            castCard.textContent = "test";
+           
 
 
 
