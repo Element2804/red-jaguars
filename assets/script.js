@@ -41,8 +41,21 @@ function currentWeather(){
                 return response.json();
            })
            .then (function (details){
-            console.log(details)
+            console.log(details.list)
 
+            const fiveDay = details.list.filter(forecast => {
+              return forecast.dt_txt.includes("12:00:00")
+            })
+
+            console.log(fiveDay)
+
+            for (var i = 0; i < fiveDay.length; i++){
+              var time = document.createElement("h3");
+              time.textContent = fiveDay[i].dt_txt;
+              wthrMain.appendChild(time);
+            }
+
+            
             var castCard = document.createElement("div");
             castCard.classList.add("card","teal")
             wthrMain.appendChild(castCard);
